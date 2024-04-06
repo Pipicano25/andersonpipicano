@@ -1,0 +1,1227 @@
+@model sigapsWeb.Models.ConsultaAlertasCuidadosI;
+<div class="well">
+    <div class="tab-content">
+        <div class="tab-pane in active act" id="tab1">
+            <div class="row">
+                @if (Model.AltTipoIdentificacion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona sin documento de identificación</p>
+                        <p class="list-group-item">@Model.AltTipoIdentificacion</p>
+                    
+                </div>
+}
+@if (Model.PlanTipoIdentificacion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona sin documento de identificación</p>
+                        <p class="list-group-item">@Model.PlanTipoIdentificacion</p>
+                    
+                </div>
+}
+@if (Model.AltRegimenSaludPertenece != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona sin afiliación al régimen de salud</p>
+                        <p class="list-group-item">@Model.AltRegimenSaludPertenece</p>
+                    
+                </div>
+}
+@if (Model.PlanRegimenSaludPertenece != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona sin afiliación al régimen de salud</p>
+                        <p class="list-group-item">@Model.PlanRegimenSaludPertenece</p>
+                    
+                </div>
+}
+@if (Model.AltVictAtnPsc != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Víctima del conflicto armado sin atención psicosocial</p>
+                        <p class="list-group-item">@Model.AltVictAtnPsc</p>
+                    
+                </div>
+}
+@if (Model.PlanVictAtnPsc != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Víctima del conflicto armado sin atención psicosocial</p>
+                        <p class="list-group-item">@Model.PlanVictAtnPsc</p>
+                    
+                </div>
+}
+@if (Model.AltVictAtnSald != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Víctima del conflicto armado  sin atención integral en salud</p>
+                        <p class="list-group-item">@Model.AltVictAtnSald</p>
+                    
+                </div>
+}
+@if (Model.PlanVictAtnSald != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Víctima del conflicto armado  sin atención integral en salud</p>
+                        <p class="list-group-item">@Model.PlanVictAtnSald</p>
+                    
+                </div>
+}
+@if (Model.AltDiscapacidad != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona discapacitada sin atención integral en salud para discapacidad</p>
+                        <p class="list-group-item">@Model.AltDiscapacidad</p>
+                    
+                </div>
+}
+@if (Model.PlanDiscapacidad != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona discapacitada sin atención integral en salud para discapacidad</p>
+                        <p class="list-group-item">@Model.PlanDiscapacidad</p>
+                    
+                </div>
+}
+@if (Model.AltCerDiscapacidad != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con certificado de discapacidad que requiere atención integral en salud</p>
+                        <p class="list-group-item">@Model.AltCerDiscapacidad</p>
+                    
+                </div>
+}
+@if (Model.PlanCerDiscapacidad != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con certificado de discapacidad que requiere atención integral en salud</p>
+                        <p class="list-group-item">@Model.PlanCerDiscapacidad</p>
+                    
+                </div>
+}
+@if (Model.AltSistemaRiesgo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de trabajador no afiliado a sistema general de riesgos laborales</p>
+                        <p class="list-group-item">@Model.AltSistemaRiesgo</p>
+                    
+                </div>
+}
+@if (Model.PlanSistemaRiesgo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de trabajador no afiliado a sistema general de riesgos laborales</p>
+                        <p class="list-group-item">@Model.PlanSistemaRiesgo</p>
+                    
+                </div>
+}
+@if (Model.AltHoraTrabajo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona menor de 18 años que realiza trabajo infantil</p>
+                        <p class="list-group-item">@Model.AltHoraTrabajo</p>
+                    
+                </div>
+}
+@if (Model.PlanHoraTrabajo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona menor de 18 años que realiza trabajo infantil</p>
+                        <p class="list-group-item">@Model.PlanHoraTrabajo</p>
+                    
+                </div>
+}
+@if (Model.AltHoraTrabajo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona menor de 18 años que realiza trabajo infantil</p>
+                        <p class="list-group-item">@Model.AltHoraTrabajo</p>
+                    
+                </div>
+}
+@if (Model.PlanHoraTrabajo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona menor de 18 años que realiza trabajo infantil</p>
+                        <p class="list-group-item">@Model.PlanHoraTrabajo</p>
+                    
+                </div>
+}
+@if (Model.AltInterfiereEscolar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Menor de 18 años que realiza trabajo infantil que interfiere con sus actividades escolares</p>
+                        <p class="list-group-item">@Model.AltInterfiereEscolar</p>
+                    
+                </div>
+}
+@if (Model.PlanInterfiereEscolar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Menor de 18 años que realiza trabajo infantil que interfiere con sus actividades escolares</p>
+                        <p class="list-group-item">@Model.PlanInterfiereEscolar</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpFisico != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpFisico</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpFisico != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpFisico</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpPsico != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpPsico</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpPsico != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpPsico</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpBiolog != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpBiolog</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpBiolog != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpBiolog</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpBiomec != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpBiomec</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpBiomec != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpBiomec</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpQuimi != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpQuimi</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpQuimi != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpQuimi</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpAltur != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpAltur</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpAltur != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpAltur</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpLocat != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpLocat</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpLocat != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpLocat</p>
+                    
+                </div>
+}
+@if (Model.AltActividadExpFennat != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.AltActividadExpFennat</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadExpFennat != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona expuesta a peligros en su ocupación''</p>
+                        <p class="list-group-item">@Model.PlanActividadExpFennat</p>
+                    
+                </div>
+}
+
+@if (Model.AltActividadElemento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona que no usa elementos de protección personal en su ocupación</p>
+                        <p class="list-group-item">@Model.AltActividadElemento</p>
+                    
+                </div>
+}
+@if (Model.PlanActividadElemento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona que no usa elementos de protección personal en su ocupación</p>
+                        <p class="list-group-item">@Model.PlanActividadElemento</p>
+                    
+                </div>
+}
+@if (Model.AltActuarEmergen != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona que desconoce como actuar en caso de emergencia en su ocupación</p>
+                        <p class="list-group-item">@Model.AltActuarEmergen</p>
+                    
+                </div>
+}
+@if (Model.PlanActuarEmergen != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona que desconoce como actuar en caso de emergencia en su ocupación</p>
+                        <p class="list-group-item">@Model.PlanActuarEmergen</p>
+                    
+                </div>
+}
+@if (Model.AltDxOcupacion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona diagnosticada sin tratamiento</p>
+                        <p class="list-group-item">@Model.AltDxOcupacion</p>
+                    
+                </div>
+}
+@if (Model.PlanDxOcupacion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona diagnosticada sin tratamiento</p>
+                        <p class="list-group-item">@Model.PlanDxOcupacion</p>
+                    
+                </div>
+}
+@if (Model.AltAccResOcupacion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta -  Persona discapacitada relacionada con la ocupación</p>
+                        <p class="list-group-item">@Model.AltAccResOcupacion</p>
+                    
+                </div>
+}
+@if (Model.PlanAccResOcupacion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan -  Persona discapacitada relacionada con la ocupación</p>
+                        <p class="list-group-item">@Model.PlanAccResOcupacion</p>
+                    
+                </div>
+}
+@if (Model.AltMascotaVacunada != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de Zoonosis</p>
+                        <p class="list-group-item">@Model.AltMascotaVacunada</p>
+                    
+                </div>
+}
+@if (Model.PlanMascotaVacunada != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de Zoonosis</p>
+                        <p class="list-group-item">@Model.PlanMascotaVacunada</p>
+                    
+                </div>
+}
+@if (Model.AltAlimCantAsucar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Adiciona dos o más cucharadas</p>
+                        <p class="list-group-item">@Model.AltAlimCantAsucar</p>
+                    
+                </div>
+}
+@if (Model.PlanAlimCantAsucar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Adiciona dos o más cucharadas</p>
+                        <p class="list-group-item">@Model.PlanAlimCantAsucar</p>
+                    
+                </div>
+}
+@if (Model.AltBebCantAsucar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Consumo excesivo de endulzantes</p>
+                        <p class="list-group-item">@Model.AltBebCantAsucar</p>
+                    
+                </div>
+}
+@if (Model.PlanBebCantAsucar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Consumo excesivo de endulzantes</p>
+                        <p class="list-group-item">@Model.PlanBebCantAsucar</p>
+                    
+                </div>
+}
+@if (Model.AltAlimCantSal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Consumo excesivo de endulzantes</p>
+                        <p class="list-group-item">@Model.AltAlimCantSal</p>
+                    
+                </div>
+}
+@if (Model.PlanAlimCantSal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Consumo excesivo de endulzantes</p>
+                        <p class="list-group-item">@Model.PlanAlimCantSal</p>
+                    
+                </div>
+}
+@if (Model.AltAddSal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Consumo excesivo de sal</p>
+                        <p class="list-group-item">@Model.AltAddSal</p>
+                    
+                </div>
+}
+@if (Model.PlanAddSal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Consumo excesivo de sal</p>
+                        <p class="list-group-item">@Model.PlanAddSal</p>
+                    
+                </div>
+}
+@if (Model.AltLactancia != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Menor que no recibió lactancia materna</p>
+                        <p class="list-group-item">@Model.AltLactancia</p>
+                    
+                </div>
+}
+@if (Model.PlanLactancia != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Menor que no recibió lactancia materna</p>
+                        <p class="list-group-item">@Model.PlanLactancia</p>
+                    
+                </div>
+}
+@if (Model.AltDesparacitado != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Menor no desparasitado</p>
+                        <p class="list-group-item">@Model.AltDesparacitado</p>
+                    
+                </div>
+}
+@if (Model.PlanDesparacitado != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Menor no desparasitado</p>
+                        <p class="list-group-item">@Model.PlanDesparacitado</p>
+                    
+                </div>
+}
+@if (Model.AltDxDiabetes != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Diagnóstico de diabetes</p>
+                        <p class="list-group-item">@Model.AltDxDiabetes</p>
+                    
+                </div>
+}
+@if (Model.PlanDxDiabetes != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Diagnóstico de diabetes</p>
+                        <p class="list-group-item">@Model.PlanDxDiabetes</p>
+                    
+                </div>
+}
+@if (Model.AltDiabetesTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Diagnóstico de  diabetes sin tratamiento</p>
+                        <p class="list-group-item">@Model.AltDiabetesTratamiento</p>
+                    
+                </div>
+}
+@if (Model.PlanDiabetesTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Diagnóstico de  diabetes sin tratamiento</p>
+                        <p class="list-group-item">@Model.PlanDiabetesTratamiento</p>
+                    
+                </div>
+}
+@if (Model.AltDiabetesControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Diagnóstico de diabetes sin control medico</p>
+                        <p class="list-group-item">@Model.AltDiabetesControl</p>
+                    
+                </div>
+}
+@if (Model.PlanDiabetesControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Diagnóstico de diabetes sin control medico</p>
+                        <p class="list-group-item">@Model.PlanDiabetesControl</p>
+                    
+                </div>
+}
+@if (Model.AltDxHta != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Diagnóstico de HTA</p>
+                        <p class="list-group-item">@Model.AltDxHta</p>
+                    
+                </div>
+}
+@if (Model.PlanDxHta != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Diagnóstico de HTA</p>
+                        <p class="list-group-item">@Model.PlanDxHta</p>
+                    
+                </div>
+}
+@if (Model.AltHtaTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Diagnostico de HTA sin tratamiento farmacológico</p>
+                        <p class="list-group-item">@Model.AltHtaTratamiento</p>
+                    
+                </div>
+}
+@if (Model.PlanHtaTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Diagnostico de HTA sin tratamiento farmacológico</p>
+                        <p class="list-group-item">@Model.PlanHtaTratamiento</p>
+                    
+                </div>
+}
+@if (Model.AltHtaControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Diagnostico de HTA sin control medico</p>
+                        <p class="list-group-item">@Model.AltHtaControl</p>
+                    
+                </div>
+}
+@if (Model.PlanHtaControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Diagnostico de HTA sin control medico</p>
+                        <p class="list-group-item">@Model.PlanHtaControl</p>
+                    
+                </div>
+}
+@if (Model.AltPresArResultado != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Urgencia hipertensiva</p>
+                        <p class="list-group-item">@Model.AltPresArResultado</p>
+                    
+                </div>
+}
+@if (Model.PlanPresArResultado != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Urgencia hipertensiva</p>
+                        <p class="list-group-item">@Model.PlanPresArResultado</p>
+                    
+                </div>
+}
+@if (Model.AltAntCancer != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Antecedente familiar  de Cáncer</p>
+                        <p class="list-group-item">@Model.AltAntCancer</p>
+                    
+                </div>
+}
+@if (Model.PlanAntCancer != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Antecedente familiar  de Cáncer</p>
+                        <p class="list-group-item">@Model.PlanAntCancer</p>
+                    
+                </div>
+}
+@if (Model.AltDxCancerTipo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con diagnóstico de cáncer</p>
+                        <p class="list-group-item">@Model.AltDxCancerTipo</p>
+                    
+                </div>
+}
+@if (Model.PlanDxCancerTipo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con diagnóstico de cáncer</p>
+                        <p class="list-group-item">@Model.PlanDxCancerTipo</p>
+                    
+                </div>
+}
+@if (Model.AltDxCanLinfomas != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - menor de 18 años con diagnóstico de leucemias o linfomas</p>
+                        <p class="list-group-item">@Model.AltDxCanLinfomas</p>
+                    
+                </div>
+}
+@if (Model.PlanDxCanLinfomas != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - menor de 18 años con diagnóstico de leucemias o linfomas</p>
+                        <p class="list-group-item">@Model.PlanDxCanLinfomas</p>
+                    
+                </div>
+}
+@if (Model.AltTiempoDxCan != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con diagnóstico reciente</p>
+                        <p class="list-group-item">@Model.AltTiempoDxCan</p>
+                    
+                </div>
+}
+@if (Model.PlanTiempoDxCan != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con diagnóstico reciente</p>
+                        <p class="list-group-item">@Model.PlanTiempoDxCan</p>
+                    
+                </div>
+}
+@if (Model.AltDxCanTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con diagnóstico de cáncer sin tratamiento farmacológico</p>
+                        <p class="list-group-item">@Model.AltDxCanTratamiento</p>
+                    
+                </div>
+}
+@if (Model.PlanDxCanTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con diagnóstico de cáncer sin tratamiento farmacológico</p>
+                        <p class="list-group-item">@Model.PlanDxCanTratamiento</p>
+                    
+                </div>
+}
+@if (Model.AltDxCanControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con diagnóstico de cáncer sin control médico</p>
+                        <p class="list-group-item">@Model.AltDxCanControl</p>
+                    
+                </div>
+}
+@if (Model.PlanDxCanControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con diagnóstico de cáncer sin control médico</p>
+                        <p class="list-group-item">@Model.PlanDxCanControl</p>
+                    
+                </div>
+}
+@if (Model.AltDxImc != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Problemas Alimenticios</p>
+                        <p class="list-group-item">@Model.AltDxImc</p>
+                    
+                </div>
+}
+@if (Model.PlanDxImc != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Problemas Alimenticios</p>
+                        <p class="list-group-item">@Model.PlanDxImc</p>
+                    
+                </div>
+}
+@if (Model.AltDxPerimetro != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Obesidad abdominal</p>
+                        <p class="list-group-item">@Model.AltDxPerimetro</p>
+                    
+                </div>
+}
+@if (Model.PlanDxPerimetro != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Obesidad abdominal</p>
+                        <p class="list-group-item">@Model.PlanDxPerimetro</p>
+                    
+                </div>
+}
+@if (Model.AltFuma != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Fumador activo</p>
+                        <p class="list-group-item">@Model.AltFuma</p>
+                    
+                </div>
+}
+@if (Model.PlanFuma != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Fumador activo</p>
+                        <p class="list-group-item">@Model.PlanFuma</p>
+                    
+                </div>
+}
+@if (Model.AltAntTabaco != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Fumador pasivo</p>
+                        <p class="list-group-item">@Model.AltAntTabaco</p>
+                    
+                </div>
+}
+@if (Model.PlanAntTabaco != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Fumador pasivo</p>
+                        <p class="list-group-item">@Model.PlanAntTabaco</p>
+                    
+                </div>
+}
+@if (Model.AltExfumador != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona exfumadora</p>
+                        <p class="list-group-item">@Model.AltExfumador</p>
+                    
+                </div>
+}
+@if (Model.PlanExfumador != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona exfumadora</p>
+                        <p class="list-group-item">@Model.PlanExfumador</p>
+                    
+                </div>
+}
+@if (Model.AltTiempoExfumador != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Posibilidad de recaída al hábito de fumar</p>
+                        <p class="list-group-item">@Model.AltTiempoExfumador</p>
+                    
+                </div>
+}
+@if (Model.PlanTiempoExfumador != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Posibilidad de recaída al hábito de fumar</p>
+                        <p class="list-group-item">@Model.PlanTiempoExfumador</p>
+                    
+                </div>
+}
+@if (Model.AltActFisica != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Nula actividad física o sedentarismo</p>
+                        <p class="list-group-item">@Model.AltActFisica</p>
+                    
+                </div>
+}
+@if (Model.PlanActFisica != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Nula actividad física o sedentarismo</p>
+                        <p class="list-group-item">@Model.PlanActFisica</p>
+                    
+                </div>
+}
+@if (Model.AltAcudeOdontologo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Insuficiente asistencia al odontólogo</p>
+                        <p class="list-group-item">@Model.AltAcudeOdontologo</p>
+                    
+                </div>
+}
+@if (Model.PlanAcudeOdontologo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Insuficiente asistencia al odontólogo</p>
+                        <p class="list-group-item">@Model.PlanAcudeOdontologo</p>
+                    
+                </div>
+}
+@if (Model.AltIntercamCepillo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Hábitos de salud bucal inadecuada (uso personal del cepillo de dientes)</p>
+                        <p class="list-group-item">@Model.AltIntercamCepillo</p>
+                    
+                </div>
+}
+@if (Model.PlanIntercamCepillo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Hábitos de salud bucal inadecuada (uso personal del cepillo de dientes)</p>
+                        <p class="list-group-item">@Model.PlanIntercamCepillo</p>
+                    
+                </div>
+}
+@if (Model.AltCepillaDia != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Poca frecuencia en cepillado de dientes</p>
+                        <p class="list-group-item">@Model.AltCepillaDia</p>
+                    
+                </div>
+}
+@if (Model.PlanCepillaDia != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Poca frecuencia en cepillado de dientes</p>
+                        <p class="list-group-item">@Model.PlanCepillaDia</p>
+                    
+                </div>
+}
+
+
+@if (Model.AltIngiereCrema != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de fluorosis en denticiòn permanente</p>
+                        <p class="list-group-item">@Model.AltIngiereCrema</p>
+                    
+                </div>
+}
+@if (Model.PlanIngiereCrema != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de fluorosis en denticiòn permanente</p>
+                        <p class="list-group-item">@Model.PlanIngiereCrema</p>
+                    
+                </div>
+}
+@if (Model.AltSaludBucal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Alteraciones en cavidad bucal</p>
+                        <p class="list-group-item">@Model.AltSaludBucal</p>
+                    
+                </div>
+}
+@if (Model.PlanSaludBucal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Alteraciones en cavidad bucal</p>
+                        <p class="list-group-item">@Model.PlanSaludBucal</p>
+                    
+                </div>
+}
+@if (Model.AltFaltaDiente != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Edentulismo parcial o total</p>
+                        <p class="list-group-item">@Model.AltFaltaDiente</p>
+                    
+                </div>
+}
+@if (Model.PlanFaltaDiente != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Edentulismo parcial o total</p>
+                        <p class="list-group-item">@Model.PlanFaltaDiente</p>
+                    
+                </div>
+}
+@if (Model.AltLimpiaProtesis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Desconocimiento de higiene y cuidado de pròtesis</p>
+                        <p class="list-group-item">@Model.AltLimpiaProtesis</p>
+                    
+                </div>
+}
+@if (Model.PlanLimpiaProtesis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Desconocimiento de higiene y cuidado de pròtesis</p>
+                        <p class="list-group-item">@Model.PlanLimpiaProtesis</p>
+                    
+                </div>
+}
+@if (Model.AltTiempoProtesis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - estado y adaptaciòn de pròtesis</p>
+                        <p class="list-group-item">@Model.AltTiempoProtesis</p>
+                    
+                </div>
+}
+@if (Model.PlanTiempoProtesis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - estado y adaptaciòn de pròtesis</p>
+                        <p class="list-group-item">@Model.PlanTiempoProtesis</p>
+                    
+                </div>
+}
+@if (Model.AltZonasEndemicas != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de enfermedad endémica transmitida por vectores</p>
+                        <p class="list-group-item">@Model.AltZonasEndemicas</p>
+                    
+                </div>
+}
+@if (Model.PlanZonasEndemicas != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de enfermedad endémica transmitida por vectores</p>
+                        <p class="list-group-item">@Model.PlanZonasEndemicas</p>
+                    
+                </div>
+}
+@if (Model.AltPresentoTos != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Sintomático respiratorio</p>
+                        <p class="list-group-item">@Model.AltPresentoTos</p>
+                    
+                </div>
+}
+@if (Model.PlanPresentoTos != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Sintomático respiratorio</p>
+                        <p class="list-group-item">@Model.PlanPresentoTos</p>
+                    
+                </div>
+}
+@if (Model.AltAntDxTuberculosis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Contactos con riesgo de TB</p>
+                        <p class="list-group-item">@Model.AltAntDxTuberculosis</p>
+                    
+                </div>
+}
+@if (Model.PlanAntDxTuberculosis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Contactos con riesgo de TB</p>
+                        <p class="list-group-item">@Model.PlanAntDxTuberculosis</p>
+                    
+                </div>
+}
+@if (Model.AltDxTuberculosis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Contactos con riesgo de TB</p>
+                        <p class="list-group-item">@Model.AltDxTuberculosis</p>
+                    
+                </div>
+}
+@if (Model.PlanDxTuberculosis != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Contactos con riesgo de TB</p>
+                        <p class="list-group-item">@Model.PlanDxTuberculosis</p>
+                    
+                </div>
+}
+@if (Model.AltDxTbMenorFiebre != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de menor con TB infantil</p>
+                        <p class="list-group-item">@Model.AltDxTbMenorFiebre</p>
+                    
+                </div>
+}
+@if (Model.PlanDxTbMenorFiebre != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de menor con TB infantil</p>
+                        <p class="list-group-item">@Model.PlanDxTbMenorFiebre</p>
+                    
+                </div>
+}
+@if (Model.AltTbDxTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Tuberculosis diagnosticada sin tratamiento</p>
+                        <p class="list-group-item">@Model.AltTbDxTratamiento</p>
+                    
+                </div>
+}
+@if (Model.PlanTbDxTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Tuberculosis diagnosticada sin tratamiento</p>
+                        <p class="list-group-item">@Model.PlanTbDxTratamiento</p>
+                    
+                </div>
+}
+@if (Model.AltTdDxEgreso != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Tuberculosis diagnosticada sin finalización de tratamiento</p>
+                        <p class="list-group-item">@Model.AltTdDxEgreso</p>
+                    
+                </div>
+}
+@if (Model.PlanTdDxEgreso != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Tuberculosis diagnosticada sin finalización de tratamiento</p>
+                        <p class="list-group-item">@Model.PlanTdDxEgreso</p>
+                    
+                </div>
+}
+@if (Model.AltTbDxVih != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Caso de coinfección TB y VIH</p>
+                        <p class="list-group-item">@Model.AltTbDxVih</p>
+                    
+                </div>
+}
+@if (Model.PlanTbDxVih != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Caso de coinfección TB y VIH</p>
+                        <p class="list-group-item">@Model.PlanTbDxVih</p>
+                    
+                </div>
+}
+@if (Model.AltTbTratDxVih != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Caso sin tratamiento de salud integral</p>
+                        <p class="list-group-item">@Model.AltTbTratDxVih</p>
+                    
+                </div>
+}
+@if (Model.PlanTbTratDxVih != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Caso sin tratamiento de salud integral</p>
+                        <p class="list-group-item">@Model.PlanTbTratDxVih</p>
+                    
+                </div>
+}
+@if (Model.AltContDxLepra != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de lepra por antecedente de contacto</p>
+                        <p class="list-group-item">@Model.AltContDxLepra</p>
+                    
+                </div>
+}
+@if (Model.PlanContDxLepra != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de lepra por antecedente de contacto</p>
+                        <p class="list-group-item">@Model.PlanContDxLepra</p>
+                    
+                </div>
+}
+@if (Model.AltLesionPiel != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de lepra por evidencia de signos</p>
+                        <p class="list-group-item">@Model.AltLesionPiel</p>
+                    
+                </div>
+}
+@if (Model.PlanLesionPiel != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de lepra por evidencia de signos</p>
+                        <p class="list-group-item">@Model.PlanLesionPiel</p>
+                    
+                </div>
+}
+@if (Model.AltLepraDiscapacidad != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con discapacidad relacionada con lepra sin atención y seguimiento para discapacidad</p>
+                        <p class="list-group-item">@Model.AltLepraDiscapacidad</p>
+                    
+                </div>
+}
+@if (Model.PlanLepraDiscapacidad != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con discapacidad relacionada con lepra sin atención y seguimiento para discapacidad</p>
+                        <p class="list-group-item">@Model.PlanLepraDiscapacidad</p>
+                    
+                </div>
+}
+@if (Model.AltLepraTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Lepra diagnosticada sin tratamiento</p>
+                        <p class="list-group-item">@Model.AltLepraTratamiento</p>
+                    
+                </div>
+}
+@if (Model.PlanLepraTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Lepra diagnosticada sin tratamiento</p>
+                        <p class="list-group-item">@Model.PlanLepraTratamiento</p>
+                    
+                </div>
+}
+@if (Model.AltLepraValoracion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona diagnósticada con lepra sin valoración anual táctil térmica y dolorosa</p>
+                        <p class="list-group-item">@Model.AltLepraValoracion</p>
+                    
+                </div>
+}
+@if (Model.PlanLepraValoracion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona diagnósticada con lepra sin valoración anual táctil térmica y dolorosa</p>
+                        <p class="list-group-item">@Model.PlanLepraValoracion</p>
+                    
+                </div>
+}
+@if (Model.AltLepraControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con diagnóstico de lepra sin control anual</p>
+                        <p class="list-group-item">@Model.AltLepraControl</p>
+                    
+                </div>
+}
+@if (Model.PlanLepraControl != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con diagnóstico de lepra sin control anual</p>
+                        <p class="list-group-item">@Model.PlanLepraControl</p>
+                    
+                </div>
+}
+@if (Model.AltLepraConviviente != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Convivientes sin evaluación</p>
+                        <p class="list-group-item">@Model.AltLepraConviviente</p>
+                    
+                </div>
+}
+@if (Model.PlanLepraConviviente != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Convivientes sin evaluación</p>
+                        <p class="list-group-item">@Model.PlanLepraConviviente</p>
+                    
+                </div>
+}
+@if (Model.AltDiarrea != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Riesgo de EDA</p>
+                        <p class="list-group-item">@Model.AltDiarrea</p>
+                    
+                </div>
+}
+@if (Model.PlanDiarrea != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Riesgo de EDA</p>
+                        <p class="list-group-item">@Model.PlanDiarrea</p>
+                    
+                </div>
+}
+@if (Model.AltDiarreaTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - EDA sin tratamiento</p>
+                        <p class="list-group-item">@Model.AltDiarreaTratamiento</p>
+                    
+                </div>
+}
+@if (Model.PlanDiarreaTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - EDA sin tratamiento</p>
+                        <p class="list-group-item">@Model.PlanDiarreaTratamiento</p>
+                    
+                </div>
+}
+@if (Model.AltSintomaEda != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Menor de 6 años con EDA</p>
+                        <p class="list-group-item">@Model.AltSintomaEda</p>
+                    
+                </div>
+}
+@if (Model.PlanSintomaEda != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Menor de 6 años con EDA</p>
+                        <p class="list-group-item">@Model.PlanSintomaEda</p>
+                    
+                </div>
+}
+@if (Model.AltSintomaIra != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Menor de 6 años con IRA</p>
+                        <p class="list-group-item">@Model.AltSintomaIra</p>
+                    
+                </div>
+}
+@if (Model.PlanSintomaIra != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Menor de 6 años con IRA</p>
+                        <p class="list-group-item">@Model.PlanSintomaIra</p>
+                    
+                </div>
+}
+@if (Model.AltSintomaCovid19 != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Caso sospechoso de  Covid-19</p>
+                        <p class="list-group-item">@Model.AltSintomaCovid19</p>
+                    
+                </div>
+}
+@if (Model.PlanSintomaCovid19 != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Caso sospechoso de  Covid-19</p>
+                        <p class="list-group-item">@Model.PlanSintomaCovid19</p>
+                    
+                </div>
+}
+@if (Model.AltVacunadoCovid19 != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Falta de inmunización para Covid-19</p>
+                        <p class="list-group-item">@Model.AltVacunadoCovid19</p>
+                    
+                </div>
+}
+@if (Model.PlanVacunadoCovid19 != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Falta de inmunización para Covid-19</p>
+                        <p class="list-group-item">@Model.PlanVacunadoCovid19</p>
+                    
+                </div>
+}
+@if (Model.AltDosisCovid19 != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Esquema de vacunación Covid-19 incompleto</p>
+                        <p class="list-group-item">@Model.AltDosisCovid19</p>
+                    
+                </div>
+}
+@if (Model.PlanDosisCovid19 != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Esquema de vacunación Covid-19 incompleto</p>
+                        <p class="list-group-item">@Model.PlanDosisCovid19</p>
+                    
+                </div>
+}
+@if (Model.AltNinoDuermMal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Niño con signos y síntomas de interés en salud mental</p>
+                        <p class="list-group-item">@Model.AltNinoDuermMal</p>
+                    
+                </div>
+}
+@if (Model.PlanNinoDuermMal != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Niño con signos y síntomas de interés en salud mental</p>
+                        <p class="list-group-item">@Model.PlanNinoDuermMal</p>
+                    
+                </div>
+}
+@if (Model.AltDxMental != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con antecedente de trastorno mental</p>
+                        <p class="list-group-item">@Model.AltDxMental</p>
+                    
+                </div>
+}
+@if (Model.PlanDxMental != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con antecedente de trastorno mental</p>
+                        <p class="list-group-item">@Model.PlanDxMental</p>
+                    
+                </div>
+}
+
+@if (Model.AltTratadoHerirlo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Niño con signos y síntomas de interés en salud mental</p>
+                        <p class="list-group-item">@Model.AltTratadoHerirlo</p>
+                    
+                </div>
+}
+@if (Model.PlanTratadoHerirlo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Niño con signos y síntomas de interés en salud mental</p>
+                        <p class="list-group-item">@Model.PlanTratadoHerirlo</p>
+                    
+                </div>
+}
+@if (Model.AltConvulsion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Niño con signos y síntomas de interés en salud mental</p>
+                        <p class="list-group-item">@Model.AltConvulsion</p>
+                    
+                </div>
+}
+@if (Model.PlanConvulsion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Niño con signos y síntomas de interés en salud mental</p>
+                        <p class="list-group-item">@Model.PlanConvulsion</p>
+                    
+                </div>
+}
+@if (Model.AltBebeMuchoLicor != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Consumo problematico de alcohol</p>
+                        <p class="list-group-item">@Model.AltBebeMuchoLicor</p>
+                    
+                </div>
+}
+@if (Model.PlanBebeMuchoLicor != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Consumo problematico de alcohol</p>
+                        <p class="list-group-item">@Model.PlanBebeMuchoLicor</p>
+                    
+                </div>
+}
+@if (Model.AltUtilzaDrogaPsa != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con consumo de sustancias psicoactivas</p>
+                        <p class="list-group-item">@Model.AltUtilzaDrogaPsa</p>
+                    
+                </div>
+}
+@if (Model.PlanUtilzaDrogaPsa != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con consumo de sustancias psicoactivas</p>
+                        <p class="list-group-item">@Model.PlanUtilzaDrogaPsa</p>
+                    
+                </div>
+}
+@if (Model.AltViolenciaEmocional != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta -  Persona víctima de violencia de género</p>
+                        <p class="list-group-item">@Model.AltViolenciaEmocional</p>
+                    
+                </div>
+}
+@if (Model.PlanViolenciaEmocional != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan -  Persona víctima de violencia de género</p>
+                        <p class="list-group-item">@Model.PlanViolenciaEmocional</p>
+                    
+                </div>
+}
+@if (Model.AltViolenciaFisicaEscolar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta -  violencia escolar</p>
+                        <p class="list-group-item">@Model.AltViolenciaFisicaEscolar</p>
+                    
+                </div>
+}
+@if (Model.PlanViolenciaFisicaEscolar != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan -  violencia escolar</p>
+                        <p class="list-group-item">@Model.PlanViolenciaFisicaEscolar</p>
+                    
+                </div>
+}
+@if (Model.AltDerechoReproductivo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Desconocimiento de Derechos sexuales y reproductivos</p>
+                        <p class="list-group-item">@Model.AltDerechoReproductivo</p>
+                    
+                </div>
+}
+@if (Model.PlanDerechoReproductivo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Desconocimiento de Derechos sexuales y reproductivos</p>
+                        <p class="list-group-item">@Model.PlanDerechoReproductivo</p>
+                    
+                </div>
+}
+@if (Model.AltPlaneaEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con deseo de iniciar su proceso de embarazo</p>
+                        <p class="list-group-item">@Model.AltPlaneaEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.PlanPlaneaEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con deseo de iniciar su proceso de embarazo</p>
+                        <p class="list-group-item">@Model.PlanPlaneaEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.AltDeseaUltilAnticoncepcion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona con deseo de iniciar métodos de planificación</p>
+                        <p class="list-group-item">@Model.AltDeseaUltilAnticoncepcion</p>
+                    
+                </div>
+}
+@if (Model.PlanDeseaUltilAnticoncepcion != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona con deseo de iniciar métodos de planificación</p>
+                        <p class="list-group-item">@Model.PlanDeseaUltilAnticoncepcion</p>
+                    
+                </div>
+}
+@if (Model.AltContinuarEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona que desea interrupción voluntaria del embarazo</p>
+                        <p class="list-group-item">@Model.AltContinuarEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.PlanContinuarEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona que desea interrupción voluntaria del embarazo</p>
+                        <p class="list-group-item">@Model.PlanContinuarEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.AltAsisteControlEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Gestante sin controles prenatales</p>
+                        <p class="list-group-item">@Model.AltAsisteControlEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.PlanAsisteControlEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Gestante sin controles prenatales</p>
+                        <p class="list-group-item">@Model.PlanAsisteControlEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.AltNoAsisteControlEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Gestante con no adherencia al control prenatal </p>
+                        <p class="list-group-item">@Model.AltNoAsisteControlEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.PlanNoAsisteControlEmbarazo != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Gestante con no adherencia al control prenatal </p>
+                        <p class="list-group-item">@Model.PlanNoAsisteControlEmbarazo</p>
+                    
+                </div>
+}
+@if (Model.AltEnfTrasSexTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Usuario con ITS no tratada</p>
+                        <p class="list-group-item">@Model.AltEnfTrasSexTratamiento</p>
+                    
+                </div>
+}
+@if (Model.PlanEnfTrasSexTratamiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Usuario con ITS no tratada</p>
+                        <p class="list-group-item">@Model.PlanEnfTrasSexTratamiento</p>
+                    
+                </div>
+}
+@if (Model.AltViolenciaSexual != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona victima de violencia sexual</p>
+                        <p class="list-group-item">@Model.AltViolenciaSexual</p>
+                    
+                </div>
+}
+@if (Model.PlanViolenciaSexual != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona victima de violencia sexual</p>
+                        <p class="list-group-item">@Model.PlanViolenciaSexual</p>
+                    
+                </div>
+}
+@if (Model.AltDenunciadoViolencia != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Persona victima de violencia sin atención</p>
+                        <p class="list-group-item">@Model.AltDenunciadoViolencia</p>
+                    
+                </div>
+}
+@if (Model.PlanDenunciadoViolencia != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Persona victima de violencia sin atención</p>
+                        <p class="list-group-item">@Model.PlanDenunciadoViolencia</p>
+                    
+                </div>
+}
+@if (Model.AltActivoRuta != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Violencia sexual sin activación de ruta</p>
+                        <p class="list-group-item">@Model.AltActivoRuta</p>
+                    
+                </div>
+}
+@if (Model.PlanActivoRuta != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Violencia sexual sin activación de ruta</p>
+                        <p class="list-group-item">@Model.PlanActivoRuta</p>
+                    
+                </div>
+}
+@if (Model.AltNoDenuncioDesconocimiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Desconocimiento de ruta</p>
+                        <p class="list-group-item">@Model.AltNoDenuncioDesconocimiento</p>
+                    
+                </div>
+}
+@if (Model.PlanNoDenuncioDesconocimiento != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Desconocimiento de ruta</p>
+                        <p class="list-group-item">@Model.PlanNoDenuncioDesconocimiento</p>
+                    
+                </div>
+}
+@if (Model.AltExamenMama != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Desconocimiento de la realización del autoexamen de mama</p>
+                        <p class="list-group-item">@Model.AltExamenMama</p>
+                    
+                </div>
+}
+@if (Model.PlanExamenMama != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Desconocimiento de la realización del autoexamen de mama</p>
+                        <p class="list-group-item">@Model.PlanExamenMama</p>
+                    
+                </div>
+}
+@if (Model.AltFrecuenciaExamenMama != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Alerta - Desconocimiento en frecuencia de realización del autoexamen de mama</p>
+                        <p class="list-group-item">@Model.AltFrecuenciaExamenMama</p>
+                    
+                </div>
+}
+@if (Model.PlanFrecuenciaExamenMama != "N") {<div class="col-md-6"> 
+                        <p class="list-group-item fondo_list">Plan - Desconocimiento en frecuencia de realización del autoexamen de mama</p>
+                        <p class="list-group-item">@Model.PlanFrecuenciaExamenMama</p>
+                    
+                </div>
+}
+
+
+            </div>
+        </div>
+    </div>
+</div>

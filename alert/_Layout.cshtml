@@ -1,0 +1,636 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SIGAPS</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="~/res/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="~/res/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="~/res/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+
+    <link rel="stylesheet" href="~/res/dist/css/AdminLTE.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+
+    <link href="~/res/dist/css/skins/_all-skins.min.css" rel="stylesheet" />
+    <link href="~/res/dist/css/skins/skin-green-light.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/res/css/animations.css">
+    
+    <link rel="stylesheet" href="~/res/css/menuDetail.css">
+
+    <link rel="stylesheet" href="~/res/css/centerTupla.css">
+
+    <!-- datatable -->
+    <link href="~/res/librerias/DataTables/css/jquery.dataTables.min.css" rel="stylesheet" />
+
+    <!-- fileinput -->
+    <link href="~/res/librerias/fileinput/css/fileinput.min.css" rel="stylesheet" />
+    <link href="~/res/bower_components/select2/dist/css/select2.min.css" rel="stylesheet" />
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDPafVHcOQxcWR55I-IzR6U4KvQyKEE-gk"></script>
+
+    <!-- Google Font -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
+
+    <style>
+        .modalHeader {
+            background-color: green;
+            color: white;
+        }
+
+        .carousel {
+            background-color: #1c1a1a;
+        }
+
+        .fondo_list {
+            background-color: green;
+            color: white !important;
+        }
+    </style>
+
+</head>
+
+<body class="hold-transition skin-green-light sidebar-mini" id="bodyInicio">
+
+    <div class="wrapper">
+        <header class="main-header">
+            <!-- Logo -->
+            <a href="~/home/index" class="logo">
+                <!-- mini logo for sidebar mini 50x50 pixels -->
+                <span class="logo-mini"><b>SG</b>PS</span>
+                <!-- logo for regular state and mobile devices -->
+                <span class="logo-lg"><b>SIGAPS</b></span>
+            </a>
+            <!-- Header Navbar: style can be found in header.less -->
+            <nav class="navbar navbar-static-top">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <!-- User Account: style can be found in dropdown.less -->
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <img src="~/res/dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
+                                <span class="hidden-xs">
+                                    @Context.Session.GetString("Usuario")
+                                    <small></small>
+                                </span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="~/res/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                                    <p>
+                                        @Context.Session.GetString("Usuario")
+                                        <small></small>
+                                    </p>
+                                </li>
+                                <!-- Menu Body -->
+                                <li class="user-body">
+
+                                </li>
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-right">
+                                        <a href="~/home/logout" class="btn btn-danger btn-flat">Salir</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <!-- sidebar: style can be found in sidebar.less -->
+            <section class="sidebar">
+
+                <img src="~/res/img/logo/logo144.png" class="img-responsive center-block logoEmpresa" alt="Logo">
+                <!-- sidebar menu: : style can be found in sidebar.less -->
+                <ul class="sidebar-menu" data-widget="tree">
+                    <li class="header">MENÚ NAVEGACIÓN</li>
+                    <li class="active">
+                        <a href="~/home/index">
+                            <i class="fa fa-dashboard"></i> <span>Inicio</span>
+                        </a>
+                    </li>
+
+                    <li><a href="~/estadistica/index"><i class="fa fa-pie-chart"></i> <span>Estadisticas</span></a></li>
+                    <li><a href="~/integrante/index"><i class="fa fa-group"></i> <span>Integrante</span></a></li>
+                    <li><a href="~/datoficha/index"><i class="fa fa-folder"></i> <span>Fichas</span></a></li>
+                    <li><a href="~/establecimiento/index"><i class="fa fa-institution"></i>
+                            <span>Establecimientos</span></a></li>
+                    <li><a href="~/animal/index"><i class="fa fa-paw"></i> <span>Animales</span></a></li>
+                    <li><a href="~/clasificaciondtpe/index"><i class="fa fa-area-chart"></i> <span>Programas DT-PE</span></a></li>
+                    <li><a href="~/DemandaInducidaMorbilidad/index"><i class="fa fa-wheelchair-alt"></i> <span>Morbilidad</span></a></li>
+                    <li><a href="~/gestionacceso/index"><i class="fa fa-cog"></i> <span>Control Acceso</span></a></li>
+                    <!--  <li><a href="~/clasificaciondtpe/index"><i class="fa fa-area-chart"></i> <span>Clasificación DTPE</span></a></li> -->
+
+                </ul>
+
+            </section>
+            <!-- /.sidebar -->
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper fondoContent" id="contenedorN1">
+            @RenderBody()
+        </div>
+        <!-- /.content-wrapper -->
+
+        <footer class="main-footer">
+            <div class="pull-right hidden-xs">
+                <b>Versión</b> 1.0
+            </div>
+            <strong>Desarrollado &copy; 2019 <a href="#">SoftApp SAS</a>.</strong> Todos los derechos reservados.
+        </footer>
+
+    </div>
+    <!-- ./wrapper -->
+    <!-- modales -->
+    <!-- Modales de accio (inicio)-->
+    <!---DetallesN1-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalDetallesN1" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalDetallesN1-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN1" style="color:white" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Detalles</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="detallesModalN1"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cerrarModalN1" data-dismiss="modal">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---DetallesN1-->
+    <!---CrearN1-->
+    <div class="modal fade " data-backdrop="static" data-keyboard="false" id="modalCrearN1" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog " role="document" id="modalCrearN1-Ancho">
+            <div class="modal-content ">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN1" style="color:white" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Agregar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="crearModalN1"></div>
+                </div>
+                <div class="modal-footer CrearCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN1" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-info" id="btnCrearN1">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---CrearN1-->
+    <!---EditarN1-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalEditarN1" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog " role="document" id="modalEditarN1-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN1" style="color:white" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Editar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="editarModalN1"></div>
+                </div>
+                <div class="modal-footer EditarCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN1" data-dismiss="modal">Cerrar</button>
+                    <button type="button" class="btn btn-info" id="btnEditarN1">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---EditarN1-->
+    <!---EliminarN1-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalEliminarN1" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalEliminarN1-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN1" style="color:white" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Eliminar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="eliminarModalN1"></div>
+                </div>
+                <div class="modal-footer EliminarCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN1" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-info" id="btnEliminarN1">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---EliminarN1-->
+    <!---ContenedorN2-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalContenedorN2" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalContenedorN2-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalContenedorN2" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Detalles</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="contenedorN2"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cerrarModalContenedorN2">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---ContenedorN2 (Fin)-->
+    <!---DetallesN2 (Inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalDetallesN2" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalDetallesN2-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN2" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Detalles</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="detallesModalN2"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cerrarModalN2">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---DetallesN2 (Fin)-->
+    <!---CrearN2 (inicio)-->
+    <div class="modal fade " data-backdrop="static" data-keyboard="false" id="modalCrearN2" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalCrearN2-Ancho">
+            <div class="modal-content ">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN2" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Agregar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="crearModalN2"></div>
+                </div>
+                <div class="modal-footer CrearCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN2">Cerrar</button>
+                    <button type="button" class="btn btn-info" id="btnCrearN2">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---CrearN2 (Fin)-->
+    <!---EditarN2 (Inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalEditarN2" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalEditarN2-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN2" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Editar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="editarModalN2"></div>
+                </div>
+                <div class="modal-footer EditarCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN2">Cerrar</button>
+                    <button type="button" class="btn btn-info" id="btnEditarN2">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---EditarN2 (Fin)-->
+    <!---EliminarN2 (Inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalEliminarN2" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalEliminarN2-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN2" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Eliminar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="eliminarModalN2"></div>
+                </div>
+                <div class="modal-footer EliminarCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN2">Cancelar</button>
+                    <button type="button" class="btn btn-info" id="btnEliminarN2">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---EliminarN2 (Fin)-->
+    <!---ContenedorN3-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalContenedorN3" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalContenedorN3-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalContenedorN3" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Detalles</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="contenedorN3"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cerrarModalContenedorN3">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---ContenedorN3 (Fin)-->
+    <!---DetallesN3 (Inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalDetallesN3" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog " role="document" id="modalDetallesN3-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN3" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Detalles</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="detallesModalN3"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger cerrarModalN3">Cerrar</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---DetallesN3 (Fin)-->
+    <!---CrearN3 (inicio)-->
+    <div class="modal fade " data-backdrop="static" data-keyboard="false" id="modalCrearN3" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalCrearN3-Ancho">
+            <div class="modal-content ">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN3" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Agregar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="crearModalN3"></div>
+                </div>
+                <div class="modal-footer CrearCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN3">Cerrar</button>
+                    <button type="button" class="btn btn-info" id="btnCrearN3">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---CrearN3 (Fin)-->
+    <!---EditarN3 (Inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalEditarN3" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalEditarN3-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN3" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Editar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="editarModalN3"></div>
+                </div>
+                <div class="modal-footer EditarCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN3">Cerrar</button>
+                    <button type="button" class="btn btn-info" id="btnEditarN3">Guardar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---EditarN3 (Fin)-->
+    <!---EliminarN3 (Inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalEliminarN3" tabindex="-1"
+        role="dialog" aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalEliminarN3-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN2" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 class="modal-title">Eliminar</h5>
+                </div>
+                <div class="modal-body">
+                    <div id="eliminarModalN3"></div>
+                </div>
+                <div class="modal-footer EliminarCrudSimple">
+                    <button type="button" class="btn btn-danger cerrarModalN3">Cancelar</button>
+                    <button type="button" class="btn btn-info" id="btnEliminarN3">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!---EliminarN3 (Fin)-->
+
+
+
+
+
+
+    <!-- Modales de accion (Fin)-->
+    <!--Alertas N1 (inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalExitoN1" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalExitoN1-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 id="lblExitoN1" class="modal-title"></h5>
+                </div>
+                <div class="modal-body">
+                    <div id="CuerpoModalExitoN1"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success cerrarModalN1">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Alertas N1 (fin)-->
+    <!--Alertas N2 (inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalExitoN2" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalExitoN2-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN2" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 id="lblExitoN2" class="modal-title"></h5>
+                </div>
+                <div class="modal-body">
+                    <div id="CuerpoModalExitoN2"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success cerrarModalN2">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Alertas N2 (fin)-->
+    <!--Alertas N3 (inicio)-->
+    <div class="modal fade" data-backdrop="static" data-keyboard="false" id="modalExitoN3" tabindex="-1" role="dialog"
+        aria-labelledby="ErrorGeneral" aria-hidden="true">
+        <div class="modal-dialog" role="document" id="modalExitoN3-Ancho">
+            <div class="modal-content">
+                <div class="modal-header modalHeader">
+                    <button type="button" class="close cerrarModalN3" style="color:white" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h5 id="lblExitoN3" class="modal-title"></h5>
+                </div>
+                <div class="modal-body">
+                    <div id="CuerpoModalExitoN3"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success cerrarModalN3">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Alertas N3 (fin)-->
+
+    <!--Loader (inicio)-->
+    <div class="modal" id="Loader" style="display:none">
+        <div class="modal-dialog" role="document" style="position:absolute;top:30%;left:35%;text-align:center">
+            <div>
+                <img src="~/res/img/preloader2.gif" style="width:100px;height=100px" /><br>
+            </div>
+            <span style="color:#005213">Cargando...</span>
+        </div>
+    </div>
+
+
+    <script src="~/res/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="~/res/bower_components/jquery-ui/jquery-ui.min.js"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+        $.widget.bridge('uibutton', $.ui.button);
+    </script>
+
+    <!--Chart-->
+    <script src="~/res/bower_components/chart.js/Chart.bundle.min.js"></script>
+    <script src="~/res/bower_components/chart.js/Chartjs.min.js"></script>
+
+    <!-- Bootstrap 3.3.7 -->
+    <script src="~/res/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- FastClick -->
+    <script src="~/res/bower_components/fastclick/lib/fastclick.js"></script>
+    <!-- AdminLTE App -->
+    <script src="~/res/dist/js/adminlte.min.js"></script>
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <!-- AdminLTE for demo purposes -->
+    <script>
+        $(document).ready(function () {
+            $('.sidebar-menu').tree()
+        })
+
+        $('.modal').on('shown.bs.modal', function () {
+            $(this).find('[autofocus]').focus();
+        });
+    </script>
+
+    <script src="~/res/js/jquery.unobtrusive-ajax.min.js"></script>
+    <!-- liberias -->
+    <!-- datatable -->
+    <script src="~/res/librerias/DataTables/js/jquery.dataTables.min.js"></script>
+    <!-- crud modales -->
+
+    <script src="~/res/js/crud-mapa.js"></script>
+    <script src="~/res/js/builderUrl.js"></script>
+    <script src="~/res/js/validateField.js"></script>
+    <script src="~/res/js/caseIndicador.js"></script>
+    <script src="~/res/js/closeModal.js"></script>
+
+    <script src="~/res/js/crud-modal.js"></script>
+
+    <!-- table response -->
+    <script src="~/res/js/pagination-datatable.js"></script>
+    
+    <!-- fileinput -->
+    <script src="~/res/librerias/fileinput/js/fileinput.min.js"></script>
+    <script src="~/res/librerias/fileinput/js/locales/es.js"></script>
+    <script src="~/res/bower_components/select2/dist/js/select2.full.min.js"></script>
+
+    @RenderSection("scripts", false) @RenderSection("jsprequeridos", false)
+
+    <script>
+
+        $(window).scroll(function () {
+            $('#examples-cta').each(function () {
+                var imagePos = $(this).offset().top;
+
+                var topOfWindow = $(window).scrollTop();
+                if (imagePos < topOfWindow + 400) {
+                    $(this).addClass("slideUp");
+                }
+            });
+        });
+
+    </script>
+    <script>
+        $('#animatedElement').click(function () {
+            $(this).addClass("slideUp");
+        });
+    </script>
+
+</body>
+
+</html>

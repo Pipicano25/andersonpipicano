@@ -1,0 +1,109 @@
+
+@model sigapsWeb.Models.IsSegAlertas
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<script type="text/javascript">
+
+    function submitStudent() {
+
+        Swal.fire({
+                        title: '¿Editar?',
+                        text: 'Esta seguro de editar la información',
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonText: 'Editar',
+                        cancelButtonText: "Cancelar",
+                        
+        })
+        .then(resultado => {
+            if (resultado.value) {
+                var DropDownListMunicipalities = document.getElementById("listEstado");
+                var listMunicipalities = DropDownListMunicipalities.options[DropDownListMunicipalities.selectedIndex].value;
+
+
+                const FechaSeguimiento = document.getElementById("FechaSeguimiento");
+                const FechaSeguimientoSeleccionada = FechaSeguimiento.value;
+
+                const FechaIntervencion = document.getElementById("FechaIntervencion");
+                const FechaIntervencionSeleccionada = FechaIntervencion.value;
+
+                var data = $("#alertFrom").serialize();
+                data += "&Id=@Model.Id";
+                $.ajax({
+                    type: 'POST',
+                    url: '/alert/EditData?Estadoalert='+listMunicipalities+'&fecuno='+FechaSeguimientoSeleccionada+'&fecdos='+FechaIntervencionSeleccionada,
+                    contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+                    data: data,
+                    success: function (result) {
+                        console.log(result);
+                        if(result == "Error fields"){
+                            alert('Complete todos los campos requeridos');
+                        }else{
+                            ajaxSuccesData("Editado");
+                        }
+                    },
+                    error: function () {
+                        ajaxSuccesData("Required");
+                    }
+                })
+            } else {
+                closeModalOne()
+            }
+        });
+        
+    }
+</script>
+
+
+<div class="row">
+    <div class="col-md-12">
+        <form id="alertFrom" novalidate class="needs-validation">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div> 
+            <div class="form-group">
+                <label asp-for="IdIntegrante" class="control-label"></label>
+                <input asp-for="IdIntegrante" type="text" class="form-control" id="IdIntegrante" required readonly />
+                <span asp-validation-for="IdIntegrante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alerta" class="control-label"></label>
+                <input asp-for="Alerta" type="text" class="form-control" id="Alerta" required readonly/>
+                <span asp-validation-for="Alerta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan" class="control-label"></label>
+                <input asp-for="Plan" type="text" class="form-control" id="Plan" required readonly/>
+                <span asp-validation-for="Plan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                @Html.DropDownList("listEstado", (SelectList) ViewData["listCompany"], "-- Selecciona un estado --", new { @class = "form-control"})
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaSeguimiento" class="control-label">Fecha seguimiento</label>
+                <input asp-for="FechaSeguimiento" type="date" class="form-control" id="FechaSeguimiento" required/>
+                <span asp-validation-for="FechaSeguimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIntervencion" class="control-label">Fecha intervención</label>
+                <input asp-for="FechaIntervencion" type="date" class="form-control" id="FechaIntervencion" required/>
+                <span asp-validation-for="FechaIntervencion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesIntervencion" class="control-label">Descripción de la intervencion</label>
+                <input asp-for="DesIntervencion" type="text" class="form-control" id="DesIntervencion" />
+                <span asp-validation-for="DesIntervencion" class="text-danger"></span>
+            </div>
+            <div style="display:none">
+                <input type="button" value="Editarbtn" id="Editarbtn" class="btn editar" onclick="submitStudent()"/>
+            </div>            
+
+        </form>
+    </div>
+</div>
+
+
+

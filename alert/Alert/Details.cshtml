@@ -1,0 +1,57 @@
+@model sigapsWeb.Models.IsSegAlertas;
+<div class="well">
+        <div class="tab-content">
+            <div class="tab-pane in active act" id="tab1">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">INTEGRANTE</p>
+                            <p class="list-group-item">@Model.IdIntegrante</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">MUNICIPIO</p>
+                            <p class="list-group-item">@Model.IdMunicipio</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">FECHA SEGUIMIENTO</p>
+                            <p class="list-group-item">@Model.FechaSeguimiento</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">ALERTA</p>
+                            <p class="list-group-item">@Model.Alerta</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">PLAN</p>
+                            <p class="list-group-item">@Model.Plan</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">ESTADO</p>
+                            <p class="list-group-item">@Model.Estado</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">FECHA INTERVENCION</p>
+                            <p class="list-group-item">@Model.FechaIntervencion</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="list-group">
+                            <p class="list-group-item fondo_list">DESCRIPCION</p>
+                            <p class="list-group-item">@Model.DesIntervencion</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

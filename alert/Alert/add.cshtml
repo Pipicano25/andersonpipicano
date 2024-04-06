@@ -1,0 +1,57 @@
+<select id="miDropDown" class="form-control"></select>
+<select id="miDropDown2" class="form-control"></select>
+<select id="miDropDown3" class="form-control"></select>
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.ajax({
+            url: "/alert/list",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    $("#miDropDown").append('<option value="' + item + '">' + item + '</option>');
+                });
+            }
+        });
+         $("#miDropDown").change(function () {
+            //var opcionSeleccionada = $(this).val();
+            var select = document.getElementById("miDropDown");
+            var seleccion = select.options[select.selectedIndex].value;
+
+            console.log(seleccion);
+            $.ajax({
+                url: "/alert/listAlertas?id"+seleccion,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (index, item) {
+                    $("#miDropDown2").append('<option value="' + item + '">' + item + '</option>');
+                });
+                }
+            });
+        });
+        $("#miDropDown2").change(function () {
+            //var opcionSeleccionada = $(this).val();
+            var select = document.getElementById("miDropDown");
+            var seleccion = select.options[select.selectedIndex].value;
+            var select2 = document.getElementById("miDropDown2");
+            var seleccion2 = select2.options[select2.selectedIndex].value;
+            console.log(seleccion);
+
+            console.log(opcionSeleccionada);
+            $.ajax({
+                url: "/alert/list",
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (index, item) {
+                    $("#miDropDown3").append('<option value="' + item + '">' + item + '</option>');
+                });
+                }
+            });
+        });
+    });
+</script>

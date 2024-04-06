@@ -1,0 +1,177 @@
+@model sigapsWeb.Models.IsSegAlertas;
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<script type="text/javascript">
+   
+
+
+    function submitStudent() {
+        var data = $("#alertFrom").serialize();
+
+        const FechaSeguimiento = document.getElementById("FechaSeguimiento");
+        const FechaSeguimientoSeleccionada = FechaSeguimiento.value;
+
+        const FechaIntervencion = document.getElementById("FechaIntervencion");
+        const FechaIntervencionSeleccionada = FechaIntervencion.value;
+
+        var DropDownListMunicipalities = document.getElementById("listCompany");
+        var listMunicipalities = DropDownListMunicipalities.options[DropDownListMunicipalities.selectedIndex].value;
+
+        $.ajax({
+            type: 'POST',
+            url: '/alert/createdata?fecuno='+FechaSeguimientoSeleccionada+'&fecdos='+FechaIntervencionSeleccionada+'&integrante='+listMunicipalities,
+            contentType: 'application/x-www-form-urlencoded; charset=UTF-8', // when we use .serialize() this generates the data in query string format. this needs the default contentType (default content type is: contentType: 'application/x-www-form-urlencoded; charset=UTF-8') so it is optional, you can remove it
+            data: data,
+            success: function (result) {
+                ajaxSuccesData("Creado");
+            },
+            error: function () {
+                ajaxSuccesData("Required");
+            }
+        });
+        console.log(" a guardar");
+
+    }
+
+    var lista = $("#IdIntegrante");
+        lista.append("<option value='' disabled selected> Seleccione una opcion</option>");
+        var lista2 = $("#Alerta");
+        lista2.append("<option value='' disabled selected> Seleccione una opcion</option>");
+        var lista3 = $("#Plan");
+        lista3.append("<option value='' disabled selected> Seleccione una opcion</option>");
+        var lista3 = $("#Estado");
+        lista3.append("<option value='' disabled selected> Seleccione una opcion</option>");
+        
+
+        $.ajax({
+            url: "/alert/list", 
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                $.each(data, function (index, item) {
+                    $("#IdIntegrante").append('<option value="' + item + '">' + item + '</option>');
+                });
+            }
+        });
+         $("#listCompany").change(function () {
+            var opcionSeleccionada = $(this).val();
+            console.log(opcionSeleccionada);
+            var opciondos = opcionSeleccionada;
+                        $("#Alerta").empty();
+                        $("#Plan").empty();
+
+            var lista2 = $("#Alerta");
+            lista2.append("<option value='' disabled selected> Seleccione una opcion</option>");
+        
+            $.ajax({
+                url: "/alert/listAlertas?id="+opcionSeleccionada,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (index, item) {
+                    $("#Alerta").append('<option value="' + item + '">' + item + '</option>');
+                });
+                }
+            });
+            //estado(opcionSeleccionada);
+            $("#Estado").empty();
+
+        var lista3 = $("#Estado");
+        lista3.append("<option value='' disabled selected> Seleccione una opcion</option>");
+        console.log(opcionSeleccionada);
+        console.log(opciondos);
+        $.ajax({
+                url: "/alert/listEstado?id="+opciondos,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (index, item) {
+                    $("#Estado").append('<option value="' + item + '">' + item + '</option>');
+                });
+                }
+            });
+
+        });
+        $("#Alerta").change(function () {
+            var opcionSeleccionada = $(this).val();
+            var select2 = document.getElementById("Alerta");
+            var seleccion2 = select2.options[select2.selectedIndex].value;
+            console.log(seleccion2);
+                        $("#Plan").empty();
+
+            var lista3 = $("#Plan");
+            lista3.append("<option value='' disabled selected> Seleccione una opcion</option>");
+
+            $.ajax({
+                url: "/alert/listAlertasdos?id="+opcionSeleccionada,
+                type: "GET",
+                dataType: "json",
+                success: function (data) {
+                    $.each(data, function (index, item) {
+                    $("#Plan").append('<option value="' + item + '">' + item + '</option>');
+                });
+                }
+            });
+        });
+        
+
+     $(document).ready(function() {
+    $('.searchcc').select2({
+         dropdownParent: $('#modalCrearN1-Ancho')
+    });
+    });
+
+</script>
+
+<div class="row">
+
+    <div class="col-md-12">
+        <form id="alertFrom" novalidate class="needs-validation">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdIntegrante" class="control-label">Integrante</label>
+                <div>
+                    @Html.DropDownList("listCompany", (SelectList) ViewData["listCompany"], "-- Selecciona un integrante --", new { @class = "form-control select2  searchcc", style = "width: 100% !important;"})
+                </div>
+                <span asp-validation-for="IdIntegrante" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Alerta" class="control-label"></label>
+                <select asp-for="Alerta" type="text" class="form-control" id="Alerta" required />
+                <span asp-validation-for="Alerta" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Plan" class="control-label"></label>
+                <select asp-for="Plan" type="text" class="form-control" id="Plan" required/>
+                <span asp-validation-for="Plan" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Estado" class="control-label"></label>
+                <select asp-for="Estado" type="text" class="form-control" id="Estado" required/>
+                <span asp-validation-for="Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaSeguimiento" class="control-label">Fecha seguimiento</label>
+                <input asp-for="FechaSeguimiento" type="date" class="form-control" id="FechaSeguimiento" required/>
+                <span asp-validation-for="FechaSeguimiento" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FechaIntervencion" class="control-label">Fecha intervención</label>
+                <input asp-for="FechaIntervencion" type="date" class="form-control" id="FechaIntervencion" required/>
+                <span asp-validation-for="FechaIntervencion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesIntervencion" class="control-label">Descripción de la intervencion</label>
+                <textarea asp-for="DesIntervencion" type="text" class="form-control" id="DesIntervencion" required/>
+                <span asp-validation-for="DesIntervencion" class="text-danger"></span>
+            </div>
+            
+            <div style="display:none">
+                <input type="button" value="Save" id="Crearbtn" class="btn aceptar" onclick="submitStudent()"/>
+            </div>
+        </form>
+    </div>
+</div>
