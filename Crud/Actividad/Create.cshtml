@@ -1,0 +1,61 @@
+﻿@model PlanetaApp.Models.ACTIVIDAD
+
+
+<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+    @using (Ajax.BeginForm("Create", "Actividad", new AjaxOptions { InsertionMode = InsertionMode.Replace, UpdateTargetId = "Exito", OnSuccess = "ajaxSuccesData", OnBegin = "ajaxBeforeSend" }))
+
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOMBRE, htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.EditorFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control", @required = "required" } })
+                @Html.ValidationMessageFor(model => model.NOMBRE, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.TextAreaFor(model => model.DESCRIPCION, new { @class = "form-control", @required = "required" })
+                @Html.ValidationMessageFor(model => model.DESCRIPCION, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PRESUPUESTO, htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.EditorFor(model => model.PRESUPUESTO, new { htmlAttributes = new { @class = "form-control", @type = "number", @min = "0", @required = "required" } })
+                @Html.ValidationMessageFor(model => model.PRESUPUESTO, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FECHA_INICIAL,"FECHA INICIAL", htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                <input type="date" name="FECHA_INICIAL" value="@DateTime.Now.ToString("yyyy-MM-dd")" class="form-control">
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.FECHA_FINAL,"FECHA FINAL", htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                <input type="date" name="FECHA_FINAL" value="@DateTime.Now.AddMonths(3).ToString("yyyy-MM-dd")" class="form-control">
+            </div>
+        </div>
+
+
+        <div style="display:none">
+            <input type="submit" value="Save" id="Crearbtn" class="btn aceptar" />
+        </div>
+    </div>
+    }
+
+
+</div>

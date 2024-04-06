@@ -1,0 +1,62 @@
+﻿@model MensajeriaTexto.Models.ENTIDAD
+@{Layout = null; }
+<h4>ENTIDAD</h4>
+<hr />
+<table style="width:100%" align="center">
+    <tr>
+        <td align="right" width="50%">
+            @Html.LabelFor(model => model.RAZONSOCIAL, htmlAttributes: new { @class = "control-label" })<label>:&ensp;&ensp;</label>
+        </td>
+        <td width="50%">
+            @Html.DisplayFor(model => model.RAZONSOCIAL, new { htmlAttributes = new { @class = "control-label" } })
+            @Html.ValidationMessageFor(model => model.RAZONSOCIAL, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td align="right" width="50%">
+            @Html.LabelFor(model => model.NIT, htmlAttributes: new { @class = "control-label" })<label>:&ensp;&ensp;</label>
+        </td>
+        <td width="50%">
+            @Html.DisplayFor(model => model.NIT, new { htmlAttributes = new { @class = "control-label" } })
+            @Html.ValidationMessageFor(model => model.NIT, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td align="right" width="50%">
+            @Html.LabelFor(model => model.DIRECCION, htmlAttributes: new { @class = "control-label" })<label>:&ensp;&ensp;</label>
+        </td>
+        <td width="50%">
+            @Html.DisplayFor(model => model.DIRECCION, new { htmlAttributes = new { @class = "control-label" } })
+            @Html.ValidationMessageFor(model => model.DIRECCION, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td align="right" width="50%">
+            @Html.LabelFor(model => model.TELEFONO, htmlAttributes: new { @class = "control-label" })<label>:&ensp;&ensp;</label>
+        </td>
+        <td width="50%">
+            @Html.DisplayFor(model => model.TELEFONO, new { htmlAttributes = new { @class = "control-label" } })
+            @Html.ValidationMessageFor(model => model.TELEFONO, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td align="right" width="50%">
+            @Html.LabelFor(model => model.CORREOELECTRONICO, htmlAttributes: new { @class = "control-label" })<label>:&ensp;&ensp;</label>
+        </td>
+        <td width="50%">
+            @Html.DisplayFor(model => model.CORREOELECTRONICO, new { htmlAttributes = new { @class = "control-label" } })
+            @Html.ValidationMessageFor(model => model.CORREOELECTRONICO, "", new { @class = "text-danger" })
+        </td>
+    </tr>
+    <tr>
+        <td align="right" width="50%">
+            @Html.LabelFor(model => model.ESTADO, htmlAttributes: new { @class = "control-label" })<label>:&ensp;&ensp;</label>
+        </td>
+        <td width="50%">
+            @if(Model.ESTADO==1)
+            {<label>Activo</label> }
+            else
+            {<label>Inactivo</label> }            
+        </td>
+    </tr>
+</table>

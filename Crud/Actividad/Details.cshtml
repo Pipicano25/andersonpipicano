@@ -1,0 +1,75 @@
+﻿@model PlanetaApp.Models.ACTIVIDAD
+
+
+@{
+    string v0 = "", v1 = "", v2 = "";
+
+    switch (Model.ESTADO)
+    {
+        case 0:
+            v0 = "selected";
+            break;
+        case 1:
+            v1 = "selected";
+            break;
+        case 2:
+            v2 = "selected";
+            break;
+    }
+
+
+}
+
+<div class="col-md-12 col-lg-12 col-sm-12 col-xs-12">
+
+
+    <div class="form-horizontal">
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NOMBRE, htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.DisplayFor(model => model.NOMBRE, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DESCRIPCION, htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.DisplayFor(model => model.DESCRIPCION, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PRESUPUESTO, htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.DisplayFor(model => model.PRESUPUESTO, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ESTADO, htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                <select name="ESTADO" class="form-control">
+                    <option value="0" @v0>INACTIVO</option>
+                    <option value="1" @v1>ACTIVO</option>
+                    <option value="2" @v2>COMPLETADO</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FECHA_INICIAL, "FECHA INICIAL", htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.DisplayFor(model => model.FECHA_INICIAL, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FECHA_FINAL, "FECHA FINAL", htmlAttributes: new { @class = "control-label col-md-4 col-lg-4 col-sm-12 col-xs-12" })
+            <div class="col-md-8 col-lg-8 col-sm-12 col-xs-12">
+                @Html.DisplayFor(model => model.FECHA_FINAL, new { htmlAttributes = new { @class = "form-control" } })
+            </div>
+        </div>
+    </div>
+  
+</div>
